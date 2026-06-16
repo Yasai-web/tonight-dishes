@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>今夜なに食べる？</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- CSV 読込失敗時の注意バー（既定は非表示） -->
+    <div id="notice" class="notice" role="status" hidden>
+      CSV を読み込めなかったので初期データで表示しています
+    </div>
+
+    <header class="header">
+      <h1 class="title">今夜なに食べる？</h1>
+    </header>
+
+    <!-- 気分チップ -->
+    <nav class="moods" id="moods" aria-label="気分でしぼる"></nav>
+
+    <!-- 結果カード -->
+    <section class="result-card" id="resultCard" aria-live="polite">
+      <p class="result-label">今夜はこれ！</p>
+      <p class="result-name" id="resultName">ボタンを押してね</p>
+      <div class="result-meta" id="resultMeta"></div>
+    </section>
+
+    <!-- ルーレットボタン -->
+    <button class="roulette-btn" id="rouletteBtn" type="button">今夜はこれ！</button>
+
+    <!-- 候補リスト -->
+    <section class="candidates">
+      <p class="count" id="count">候補 0品</p>
+      <ul class="dish-list" id="dishList"></ul>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

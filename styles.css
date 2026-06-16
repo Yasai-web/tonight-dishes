@@ -1,0 +1,246 @@
+:root {
+  --bg: #FFF7EE;
+  --card: #FFFFFF;
+  --text: #3A2E26;
+  --text-strong: #633806;
+  --text-muted: #8a7a6c;
+  --accent: #BA7517;
+  --accent-text: #FFFFFF;
+  --chip-bg: #FFFFFF;
+  --chip-border: #e6d3bb;
+  --chip-text: #633806;
+  --result-bg: #FAEEDA;
+  --result-border: #EF9F27;
+  --result-text: #633806;
+  --tag-border: #EF9F27;
+  --tag-text: #633806;
+  --notice-bg: #FBE3C4;
+  --notice-text: #633806;
+  --focus: #BA7517;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #241D18;
+    --card: #2E2620;
+    --text: #F0E6DC;
+    --text-strong: #F2D9A8;
+    --text-muted: #b7a795;
+    --accent: #E0A23B;
+    --accent-text: #241D18;
+    --chip-bg: #2E2620;
+    --chip-border: #4a3d31;
+    --chip-text: #F2D9A8;
+    --result-bg: #3A2E18;
+    --result-border: #EF9F27;
+    --result-text: #F2D9A8;
+    --tag-border: #EF9F27;
+    --tag-text: #F2D9A8;
+    --notice-bg: #4a3a20;
+    --notice-text: #F2D9A8;
+    --focus: #E0A23B;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN", "Yu Gothic",
+    "游ゴシック", "Meiryo", system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 16px 16px 48px;
+}
+
+/* 注意バー */
+.notice {
+  background: var(--notice-bg);
+  color: var(--notice-text);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+.notice[hidden] {
+  display: none;
+}
+
+/* ヘッダー */
+.header {
+  margin: 8px 0 18px;
+}
+.title {
+  margin: 2px 0 0;
+  font-size: 1.7rem;
+  color: var(--text-strong);
+}
+
+/* 気分チップ */
+.moods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.chip {
+  border: 1.5px solid var(--chip-border);
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 999px;
+  padding: 7px 15px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+.chip[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--accent);
+}
+
+/* 結果カード */
+.result-card {
+  background: var(--result-bg);
+  border: 2px dashed var(--result-border);
+  border-radius: 20px;
+  padding: 22px 18px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.result-label {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+  color: var(--result-text);
+  opacity: 0.85;
+}
+.result-name {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--result-text);
+  word-break: break-word;
+}
+.result-name.pop {
+  animation: pop 0.32s ease-out;
+}
+@keyframes pop {
+  0%   { transform: scale(0.85); }
+  60%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.result-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 12px;
+}
+.result-meta:empty {
+  margin-top: 0;
+}
+.tag {
+  border: 1.5px solid var(--tag-border);
+  color: var(--tag-text);
+  border-radius: 999px;
+  padding: 2px 11px;
+  font-size: 0.8rem;
+}
+
+/* ルーレットボタン */
+.roulette-btn {
+  width: 100%;
+  background: var(--accent);
+  color: var(--accent-text);
+  border: none;
+  border-radius: 16px;
+  padding: 18px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  margin-bottom: 26px;
+  transition: filter 0.12s, transform 0.08s;
+}
+.roulette-btn:hover {
+  filter: brightness(1.05);
+}
+.roulette-btn:active {
+  transform: translateY(1px);
+}
+.roulette-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* 候補リスト */
+.count {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+.dish-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dish-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--chip-border);
+  border-radius: 12px;
+  padding: 13px 15px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+.dish-item:hover {
+  border-color: var(--accent);
+}
+.dish-name {
+  font-weight: 600;
+}
+.dish-category {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* フォーカスリング */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-name.pop {
+    animation: none;
+  }
+  .roulette-btn:active {
+    transform: none;
+  }
+}
