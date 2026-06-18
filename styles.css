@@ -161,6 +161,42 @@ body {
   font-size: 0.8rem;
 }
 
+/* 結果カードの材料（買い物確認用） */
+.result-ingredients {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--result-border);
+}
+.result-ingredients[hidden] {
+  display: none;
+}
+.result-ingredients-label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--result-text);
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+/* 材料チップ（結果カード・候補リスト共通） */
+.ingredient-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.ingredient-item {
+  border: 1px solid var(--tag-border);
+  background: var(--card);
+  color: var(--tag-text);
+  border-radius: 8px;
+  padding: 3px 10px;
+  font-size: 0.85rem;
+}
+
 /* ルーレットボタン */
 .roulette-btn {
   width: 100%;
@@ -201,12 +237,22 @@ body {
   flex-direction: column;
   gap: 8px;
 }
+.dish-row {
+  display: flex;
+  flex-direction: column;
+}
+.dish-row-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .dish-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   background: var(--card);
   border: 1px solid var(--chip-border);
   border-radius: 12px;
@@ -228,6 +274,40 @@ body {
   font-size: 0.82rem;
   color: var(--text-muted);
   flex-shrink: 0;
+}
+
+/* 候補リスト：材料トグル（カートアイコンのみ） */
+.ingredient-toggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: var(--card);
+  border: 1px solid var(--chip-border);
+  border-radius: 12px;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+.ingredient-toggle:hover {
+  border-color: var(--accent);
+}
+.ingredient-toggle.is-open {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+/* 候補リスト：展開した材料チップ */
+.dish-row > .ingredient-list {
+  justify-content: flex-start;
+  margin-top: 8px;
+  padding: 0 2px;
+}
+.ingredient-list[hidden] {
+  display: none;
 }
 
 /* フォーカスリング */
