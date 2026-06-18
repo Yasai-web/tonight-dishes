@@ -13,31 +13,31 @@ const MOOD_ORDER = [
 
 /* CSV 読込失敗時に使うフォールバック既定データ（5章の25品） */
 const FALLBACK_DISHES = [
-  { name: "親子丼", category: "鶏", moods: ["子どもが喜ぶ", "早く完結"], note: "" },
-  { name: "サラダチキン", category: "鶏", moods: ["さっぱり"], note: "" },
-  { name: "手羽元の鍋", category: "鶏", moods: ["鍋でラク"], note: "" },
-  { name: "グラタン", category: "鶏", moods: ["子どもが喜ぶ"], note: "" },
-  { name: "生姜焼き", category: "肉", moods: ["がっつり", "夏向け"], note: "" },
-  { name: "回鍋肉", category: "肉", moods: ["中華"], note: "" },
-  { name: "もつ鍋風 豚肉鍋", category: "肉", moods: ["鍋でラク"], note: "" },
-  { name: "肉じゃが", category: "肉", moods: ["子どもが喜ぶ"], note: "" },
-  { name: "すき焼き", category: "肉", moods: ["がっつり", "鍋でラク"], note: "" },
-  { name: "青椒肉絲", category: "肉", moods: ["中華"], note: "" },
-  { name: "ジンギスカン", category: "肉", moods: ["がっつり"], note: "" },
-  { name: "ハンバーグ", category: "ひき肉", moods: ["がっつり", "子どもが喜ぶ"], note: "" },
-  { name: "餃子", category: "ひき肉", moods: ["中華", "子どもが喜ぶ"], note: "" },
-  { name: "ミートソース", category: "ひき肉", moods: ["子どもが喜ぶ"], note: "" },
-  { name: "焼き魚（鮭・あじ・ほっけ）", category: "魚", moods: ["さっぱり"], note: "" },
-  { name: "さばの味噌煮", category: "魚", moods: ["さっぱり"], note: "" },
-  { name: "麻婆豆腐", category: "豆腐", moods: ["中華"], note: "" },
-  { name: "肉豆腐", category: "豆腐", moods: ["さっぱり", "鍋でラク"], note: "" },
-  { name: "チャーハン", category: "主食", moods: ["早く完結"], note: "" },
-  { name: "パスタ", category: "主食", moods: ["早く完結"], note: "" },
-  { name: "焼きそば", category: "主食", moods: ["早く完結", "夏向け"], note: "" },
-  { name: "うどん", category: "主食", moods: ["早く完結"], note: "" },
-  { name: "オムライス", category: "主食", moods: ["子どもが喜ぶ", "早く完結"], note: "" },
-  { name: "お好み焼き", category: "主食", moods: ["子どもが喜ぶ", "夏向け"], note: "" },
-  { name: "冷やしラーメン", category: "主食", moods: ["さっぱり", "早く完結", "夏向け"], note: "" },
+  { name: "親子丼", category: "鶏", moods: ["子どもが喜ぶ", "早く完結"], ingredients: ["鶏もも肉", "卵", "玉ねぎ", "めんつゆ", "ごはん"], note: "" },
+  { name: "サラダチキン", category: "鶏", moods: ["さっぱり"], ingredients: ["鶏むね肉", "塩", "こしょう"], note: "" },
+  { name: "手羽元の鍋", category: "鶏", moods: ["鍋でラク"], ingredients: ["鶏手羽元", "白菜", "長ねぎ", "豆腐", "きのこ"], note: "" },
+  { name: "グラタン", category: "鶏", moods: ["子どもが喜ぶ"], ingredients: ["鶏もも肉", "マカロニ", "牛乳", "玉ねぎ", "チーズ"], note: "" },
+  { name: "生姜焼き", category: "肉", moods: ["がっつり", "夏向け"], ingredients: ["豚ロース", "生姜", "玉ねぎ", "醤油", "みりん"], note: "" },
+  { name: "回鍋肉", category: "肉", moods: ["中華"], ingredients: ["豚バラ肉", "キャベツ", "ピーマン", "豆板醤", "甜麺醤"], note: "" },
+  { name: "もつ鍋風 豚肉鍋", category: "肉", moods: ["鍋でラク"], ingredients: ["豚バラ肉", "キャベツ", "にら", "豆腐", "にんにく"], note: "" },
+  { name: "肉じゃが", category: "肉", moods: ["子どもが喜ぶ"], ingredients: ["牛肉", "じゃがいも", "玉ねぎ", "にんじん", "醤油"], note: "" },
+  { name: "すき焼き", category: "肉", moods: ["がっつり", "鍋でラク"], ingredients: ["牛肉", "長ねぎ", "春菊", "豆腐", "しらたき"], note: "" },
+  { name: "青椒肉絲", category: "肉", moods: ["中華"], ingredients: ["豚肉", "ピーマン", "たけのこ", "オイスターソース", "醤油"], note: "" },
+  { name: "ジンギスカン", category: "肉", moods: ["がっつり"], ingredients: ["ラム肉", "もやし", "玉ねぎ", "キャベツ", "ピーマン"], note: "" },
+  { name: "ハンバーグ", category: "ひき肉", moods: ["がっつり", "子どもが喜ぶ"], ingredients: ["合いびき肉", "玉ねぎ", "パン粉", "卵", "ケチャップ"], note: "" },
+  { name: "餃子", category: "ひき肉", moods: ["中華", "子どもが喜ぶ"], ingredients: ["豚ひき肉", "キャベツ", "にら", "にんにく", "餃子の皮"], note: "" },
+  { name: "ミートソース", category: "ひき肉", moods: ["子どもが喜ぶ"], ingredients: ["合いびき肉", "玉ねぎ", "トマト缶", "にんにく", "パスタ"], note: "" },
+  { name: "焼き魚（鮭・あじ・ほっけ）", category: "魚", moods: ["さっぱり"], ingredients: ["切り身魚", "塩", "大根おろし"], note: "" },
+  { name: "さばの味噌煮", category: "魚", moods: ["さっぱり"], ingredients: ["さば", "味噌", "生姜", "砂糖", "みりん"], note: "" },
+  { name: "麻婆豆腐", category: "豆腐", moods: ["中華"], ingredients: ["豆腐", "豚ひき肉", "長ねぎ", "豆板醤", "甜麺醤"], note: "" },
+  { name: "肉豆腐", category: "豆腐", moods: ["さっぱり", "鍋でラク"], ingredients: ["豆腐", "牛肉", "長ねぎ", "醤油", "砂糖"], note: "" },
+  { name: "チャーハン", category: "主食", moods: ["早く完結"], ingredients: ["ごはん", "卵", "長ねぎ", "ハム", "醤油"], note: "" },
+  { name: "パスタ", category: "主食", moods: ["早く完結"], ingredients: ["パスタ", "にんにく", "オリーブオイル", "ベーコン", "玉ねぎ"], note: "" },
+  { name: "焼きそば", category: "主食", moods: ["早く完結", "夏向け"], ingredients: ["焼きそば麺", "豚バラ肉", "キャベツ", "にんじん", "ソース"], note: "" },
+  { name: "うどん", category: "主食", moods: ["早く完結"], ingredients: ["うどん", "めんつゆ", "長ねぎ", "油揚げ", "卵"], note: "" },
+  { name: "オムライス", category: "主食", moods: ["子どもが喜ぶ", "早く完結"], ingredients: ["ごはん", "卵", "鶏肉", "玉ねぎ", "ケチャップ"], note: "" },
+  { name: "お好み焼き", category: "主食", moods: ["子どもが喜ぶ", "夏向け"], ingredients: ["小麦粉", "キャベツ", "卵", "豚バラ肉", "ソース"], note: "" },
+  { name: "冷やしラーメン", category: "主食", moods: ["さっぱり", "早く完結", "夏向け"], ingredients: ["中華麺", "きゅうり", "ハム", "卵", "トマト"], note: "" },
 ];
 
 const ALL_LABEL = "すべて";
@@ -58,6 +58,8 @@ const els = {
   moods: document.getElementById("moods"),
   resultName: document.getElementById("resultName"),
   resultMeta: document.getElementById("resultMeta"),
+  resultIngredients: document.getElementById("resultIngredients"),
+  resultIngredientList: document.getElementById("resultIngredientList"),
   rouletteBtn: document.getElementById("rouletteBtn"),
   count: document.getElementById("count"),
   dishList: document.getElementById("dishList"),
@@ -137,6 +139,7 @@ function rowsToDishes(rows) {
     name: header.indexOf("name"),
     category: header.indexOf("category"),
     moods: header.indexOf("moods"),
+    ingredients: header.indexOf("ingredients"),
     note: header.indexOf("note"),
   };
   if (idx.name === -1) {
@@ -154,6 +157,7 @@ function rowsToDishes(rows) {
 
     const category = idx.category >= 0 ? (cols[idx.category] || "").trim() : "";
     const moodsRaw = idx.moods >= 0 ? (cols[idx.moods] || "") : "";
+    const ingredientsRaw = idx.ingredients >= 0 ? (cols[idx.ingredients] || "") : "";
     const note = idx.note >= 0 ? (cols[idx.note] || "").trim() : "";
 
     const moods = moodsRaw
@@ -161,7 +165,13 @@ function rowsToDishes(rows) {
       .map((m) => m.trim())
       .filter((m) => m.length > 0);
 
-    dishes.push({ name, category, moods, note });
+    // 材料も moods と同じく「|」区切り・前後トリム・空要素破棄
+    const ingredients = ingredientsRaw
+      .split("|")
+      .map((m) => m.trim())
+      .filter((m) => m.length > 0);
+
+    dishes.push({ name, category, moods, ingredients, note });
   }
 
   if (!dishes.length) {
@@ -235,8 +245,14 @@ function renderCount() {
 
 function renderDishList() {
   els.dishList.innerHTML = "";
-  state.filtered.forEach((dish) => {
+  state.filtered.forEach((dish, index) => {
     const li = document.createElement("li");
+    li.className = "dish-row";
+
+    // 上段：料理名ボタン（左）＋材料トグル（右）を横並び
+    const top = document.createElement("div");
+    top.className = "dish-row-top";
+
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "dish-item";
@@ -253,8 +269,78 @@ function renderDishList() {
     btn.appendChild(cat);
     btn.addEventListener("click", () => setResult(dish));
 
-    li.appendChild(btn);
+    top.appendChild(btn);
+    li.appendChild(top);
+
+    // 材料がある品だけ、右端にカートアイコンのトグルを付ける
+    if (dish.ingredients && dish.ingredients.length) {
+      const listId = `ingredients-${index}`;
+
+      const toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.className = "ingredient-toggle";
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-controls", listId);
+      toggle.setAttribute("aria-label", "材料を開く");
+      toggle.appendChild(cartIcon());
+
+      const ul = document.createElement("ul");
+      ul.className = "ingredient-list";
+      ul.id = listId;
+      ul.hidden = true;
+      renderIngredientItems(ul, dish.ingredients);
+
+      toggle.addEventListener("click", () => {
+        const open = ul.hidden;
+        ul.hidden = !open;
+        toggle.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "材料を閉じる" : "材料を開く");
+      });
+
+      top.appendChild(toggle);
+      li.appendChild(ul);
+    }
+
     els.dishList.appendChild(li);
+  });
+}
+
+/* カートアイコン（インライン SVG） */
+function cartIcon() {
+  const NS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("width", "20");
+  svg.setAttribute("height", "20");
+  svg.setAttribute("fill", "none");
+  svg.setAttribute("stroke", "currentColor");
+  svg.setAttribute("stroke-width", "1.8");
+  svg.setAttribute("stroke-linecap", "round");
+  svg.setAttribute("stroke-linejoin", "round");
+  svg.setAttribute("aria-hidden", "true");
+  const paths = [
+    "M6 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
+    "M17 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0",
+    "M17 17h-11v-14h-2",
+    "M6 5l14 1l-1 7h-13",
+  ];
+  paths.forEach((d) => {
+    const p = document.createElementNS(NS, "path");
+    p.setAttribute("d", d);
+    svg.appendChild(p);
+  });
+  return svg;
+}
+
+/* 材料の <li> 群を指定の <ul> に描画（共通） */
+function renderIngredientItems(ul, ingredients) {
+  ul.innerHTML = "";
+  (ingredients || []).forEach((ing) => {
+    const li = document.createElement("li");
+    li.className = "ingredient-item";
+    li.textContent = ing;
+    ul.appendChild(li);
   });
 }
 
@@ -274,6 +360,10 @@ function setResult(dish, withPop) {
     span.textContent = t;
     els.resultMeta.appendChild(span);
   });
+
+  // 材料（買い物確認用）。未記入なら材料エリアごと隠す
+  renderIngredientItems(els.resultIngredientList, dish.ingredients);
+  els.resultIngredients.hidden = !(dish.ingredients && dish.ingredients.length);
 
   state.lastPicked = dish;
   els.rouletteBtn.textContent = "もう一回ひく";
@@ -334,6 +424,7 @@ function spin() {
     const sample = pool[Math.floor(Math.random() * pool.length)];
     els.resultName.textContent = sample.name;
     els.resultMeta.innerHTML = "";
+    els.resultIngredients.hidden = true;
 
     delay *= 1.18; // だんだん減速
     if (delay >= maxDelay) {
